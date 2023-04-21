@@ -1,0 +1,249 @@
+.html-wrapper {
+  background-color: #547f91;
+  font-weight: bold;
+}
+
+.body-wrapper {
+  background-color: #eff0f1;
+  width: 50%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+.form-header {
+  color: #666666;
+  text-align: center;
+}
+
+.content {
+  background-color: #fdfdfd;
+  color: #00bb92;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  padding: 4%;
+  row-gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  width: 100%;
+}
+
+.big-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  column-gap: 10px;
+}
+
+.radios {
+  width: 100%;
+}
+
+.checkboxes {
+  width: 100%;
+}
+
+.select-wrapper {
+  width: 100%;
+}
+
+.range {
+  display: flex;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+}
+
+.button-wrapper button {
+  background-color: #00bb92;
+  color: #fbfeff;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+#rangeValue {
+  background-color: #00bb92;
+  color: #fbfeff;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+/*html {
+  background-color: #547f91;
+  font-weight: bold;
+}
+
+body {
+  background-color: #eff0f1;
+  width: 50%;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
+h1 {
+  color: #666666;
+  text-align: center;
+}
+
+main {
+  background-color: #fdfdfd;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 1%;
+}*/
+
+/*.first-name {
+  grid-area: first-name;
+}
+
+.last-name {
+  grid-area: last-name;
+}
+
+.email {
+  grid-area: email;
+}
+
+.password {
+  grid-area: password;
+}
+
+.password-confirm {
+  grid-area: password-confirm;
+}
+
+.gender {
+  grid-area: gender;
+}
+
+.hobbies {
+  grid-area: hobbies;
+}
+
+.income-source {
+  grid-area: income-source;
+}
+
+.salary {
+  grid-area: salary;
+}
+
+.picture {
+  grid-area: picture;
+}
+
+.age {
+  grid-area: age;
+}
+
+.bio {
+  grid-area: bio;
+}
+
+form {
+  display: grid;
+  grid-template-areas: 
+  "string_1"
+  "string_2"
+  "string_3"
+  "string_4"
+  "string_5"
+  "string_6"
+  "string_7";
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto auto auto auto;
+}*/
+
+/*p {
+  color: #00bb92;
+}
+
+input {
+  border-radius: 5px;
+}*/
+
+/*.first-name {
+  float: left;
+  width: 50%;
+}
+
+.last-name {
+  float: right;
+  width: 50%;
+}
+
+.email {
+  float: left;
+  width: 100%;
+}
+
+.password {
+  float: left;
+  width: 50%;
+}
+
+.password-confirm {
+  float: right;
+  width: 50%;
+}*/
+
+/*.salary-output {
+  background-color: #00bb92;
+  color: #fbfeff;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.submit-form {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+}
+
+button {
+  background-color: #00bb92;
+  color: #fbfeff;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 5px;
+}*/
+
+/* .middle-section {
+  background-color: #fdfdfd;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "first-name last-name"
+    "email email"
+    "password password-confirm"
+    "gender hobbies"
+    "income-source salary"
+    "picture age"
+    "bio bio";
+}*/
