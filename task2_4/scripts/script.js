@@ -5,23 +5,45 @@ submitButton.addEventListener("click", submit); // ADD SUBMIT EVENT
 
 class Validation {
   constructor(
+    firstName,
+    lastName,
     email,
     password,
     passwordConfirmed,
-    firstName,
-    lastName,
     picture,
     age,
     bio
   ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.email = email;
     this.password = password;
     this.passwordConfirmed = passwordConfirmed;
-    this.firstName = firstName;
-    this.lastName = lastName;
     this.picture = picture;
     this.age = age;
     this.bio = bio;
+  }
+
+  isFirstName(firstName) {
+    const firstNameRegex = /^[A-Za-z\s]+$/;
+    if (firstNameRegex.test(firstName)) {
+      alert("First name confirmed");
+    } else {
+      alert(
+        "Your first name should have only A-Z and a-z letters, spaces can also be used"
+      );
+    }
+  }
+
+  isLastName(lastName) {
+    const lastNameRegex = /^[A-Za-z\s]+$/;
+    if (lastNameRegex.test(lastName)) {
+      alert("Last name confirmed and processed");
+    } else {
+      alert(
+        "Your last name should have only A-Z and a-z letters, spaces can also be used"
+      );
+    }
   }
 
   isEmail(email) {
@@ -50,28 +72,6 @@ class Validation {
       alert("Password confirmation is successful. Processing...");
     } else {
       alert("Your two passwords don't match!");
-    }
-  }
-
-  isFirstName(firstName) {
-    const firstNameRegex = /^[A-Za-z\s]+$/;
-    if (firstNameRegex.test(firstName)) {
-      alert("First name confirmed");
-    } else {
-      alert(
-        "Your first name should have only A-Z and a-z letters, spaces can also be used"
-      );
-    }
-  }
-
-  isLastName(lastName) {
-    const lastNameRegex = /^[A-Za-z\s]+$/;
-    if (lastNameRegex.test(lastName)) {
-      alert("Last name confirmed and processed");
-    } else {
-      alert(
-        "Your last name should have only A-Z and a-z letters, spaces can also be used"
-      );
     }
   }
 
@@ -107,29 +107,29 @@ class Validation {
 }
 
 function submit() {
+  const firstName = document.querySelector("#firstName").value;
+  const lastName = document.querySelector("#lastName").value;
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
   const passwordConfirmed = document.querySelector("#passwordConfirmed").value;
-  const firstName = document.querySelector("#firstName").value;
-  const lastName = document.querySelector("#lastName").value;
   const picture = document.querySelector("#picture").value;
   const age = document.querySelector("#age").value;
   const bio = document.querySelector("#bio").value;
   const form = new Validation(
+    firstName,
+    lastName,
     email,
     password,
     passwordConfirmed,
-    firstName,
-    lastName,
     picture,
     age,
     bio
   );
+  form.isFirstName(firstName);
+  form.isLastName(lastName);
   form.isEmail(email);
   form.isPassword(password);
   form.isPasswordConfirmed(passwordConfirmed, password);
-  form.isFirstName(firstName);
-  form.isLastName(lastName);
   form.isPicture(picture);
   form.isAge(age);
   form.isBio(bio);
