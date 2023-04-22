@@ -7,6 +7,7 @@ class Validation {
   constructor(email) {
     this.email = email;
     this.password = password;
+    this.firstName = firstName;
   }
 
   isEmail(email) {
@@ -29,12 +30,25 @@ class Validation {
       );
     }
   }
+
+  isFirstName(firstName) {
+    const firstNameRegex = /^[A-Za-z\s]+$/;
+    if (firstNameRegex.test(firstName)) {
+      alert("First name confirmed");
+    } else {
+      alert(
+        "Your first name should have only A-Z and a-z letters, as well as spaces"
+      );
+    }
+  }
 }
 
 function submit() {
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  const form = new Validation(email);
+  const firstName = document.querySelector("#firstName").value;
+  const form = new Validation(email, password, firstName);
   form.isEmail(email);
   form.isPassword(password);
+  form.isFirstName(firstName);
 }
