@@ -11,7 +11,8 @@ class Validation {
     firstName,
     lastName,
     picture,
-    age
+    age,
+    bio
   ) {
     this.email = email;
     this.password = password;
@@ -20,6 +21,7 @@ class Validation {
     this.lastName = lastName;
     this.picture = picture;
     this.age = age;
+    this.bio = bio;
   }
 
   isEmail(email) {
@@ -92,6 +94,16 @@ class Validation {
       alert("Frankly speaking, this age doesn't look too realistic...");
     }
   }
+
+  isBio(bio) {
+    if (bio) {
+      alert("Your bio is confirmed. Processing...");
+    } else {
+      alert(
+        "You did not tell us anything about yourself. Please, consider filling up the Bio form"
+      );
+    }
+  }
 }
 
 function submit() {
@@ -102,6 +114,7 @@ function submit() {
   const lastName = document.querySelector("#lastName").value;
   const picture = document.querySelector("#picture").value;
   const age = document.querySelector("#age").value;
+  const bio = document.querySelector("#bio").value;
   const form = new Validation(
     email,
     password,
@@ -109,7 +122,8 @@ function submit() {
     firstName,
     lastName,
     picture,
-    age
+    age,
+    bio
   );
   form.isEmail(email);
   form.isPassword(password);
@@ -118,4 +132,5 @@ function submit() {
   form.isLastName(lastName);
   form.isPicture(picture);
   form.isAge(age);
+  form.isBio(bio);
 }
