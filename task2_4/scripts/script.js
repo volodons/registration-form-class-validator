@@ -4,10 +4,11 @@ const submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", submit); // ADD SUBMIT EVENT
 
 class Validation {
-  constructor(email) {
+  constructor(email, password, firstName, lastName) {
     this.email = email;
     this.password = password;
     this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   isEmail(email) {
@@ -37,7 +38,18 @@ class Validation {
       alert("First name confirmed");
     } else {
       alert(
-        "Your first name should have only A-Z and a-z letters, as well as spaces"
+        "Your first name should have only A-Z and a-z letters, spaces can also be used"
+      );
+    }
+  }
+
+  isLastName(lastName) {
+    const lastNameRegex = /^[A-Za-z\s]+$/;
+    if (lastNameRegex.test(lastName)) {
+      alert("Last name confirmed and processed");
+    } else {
+      alert(
+        "Your last name should have only A-Z and a-z letters, spaces can also be used"
       );
     }
   }
@@ -47,8 +59,10 @@ function submit() {
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
   const firstName = document.querySelector("#firstName").value;
+  const lastName = document.querySelector("#lastName").value;
   const form = new Validation(email, password, firstName);
   form.isEmail(email);
   form.isPassword(password);
   form.isFirstName(firstName);
+  form.isLastName(lastName);
 }
