@@ -4,12 +4,13 @@ const submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", submit); // ADD SUBMIT EVENT
 
 class Validation {
-  constructor(email, password, passwordConfirmed, firstName, lastName) {
+  constructor(email, password, passwordConfirmed, firstName, lastName, age) {
     this.email = email;
     this.password = password;
     this.passwordConfirmed = passwordConfirmed;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.age = age;
   }
 
   isEmail(email) {
@@ -62,6 +63,16 @@ class Validation {
       );
     }
   }
+
+  isAge(age) {
+    if (age < 18 && age >= 0) {
+      alert("You need to get your parent consent to create an account");
+    } else if (age >= 18 && age <= 100) {
+      alert("Age is confirmed. Processing...");
+    } else {
+      alert("Frankly speaking, this age doesn't look too realistic...");
+    }
+  }
 }
 
 function submit() {
@@ -70,10 +81,12 @@ function submit() {
   const passwordConfirmed = document.querySelector("#passwordConfirmed").value;
   const firstName = document.querySelector("#firstName").value;
   const lastName = document.querySelector("#lastName").value;
+  const age = document.querySelector("#age").value;
   const form = new Validation(email, password, firstName);
   form.isEmail(email);
   form.isPassword(password);
   form.isPasswordConfirmed(passwordConfirmed, password);
   form.isFirstName(firstName);
   form.isLastName(lastName);
+  form.isAge(age);
 }
