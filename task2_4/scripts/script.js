@@ -4,12 +4,21 @@ const submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", submit); // ADD SUBMIT EVENT
 
 class Validation {
-  constructor(email, password, passwordConfirmed, firstName, lastName, age) {
+  constructor(
+    email,
+    password,
+    passwordConfirmed,
+    firstName,
+    lastName,
+    picture,
+    age
+  ) {
     this.email = email;
     this.password = password;
     this.passwordConfirmed = passwordConfirmed;
     this.firstName = firstName;
     this.lastName = lastName;
+    this.picture = picture;
     this.age = age;
   }
 
@@ -64,6 +73,16 @@ class Validation {
     }
   }
 
+  isPicture(picture) {
+    if (picture) {
+      alert("Picture is confirmed. Processing...");
+    } else {
+      alert(
+        "You did not upload your profile picture, please, consider uploading one"
+      );
+    }
+  }
+
   isAge(age) {
     if (age < 18 && age >= 0) {
       alert("You need to get your parent consent to create an account");
@@ -81,12 +100,22 @@ function submit() {
   const passwordConfirmed = document.querySelector("#passwordConfirmed").value;
   const firstName = document.querySelector("#firstName").value;
   const lastName = document.querySelector("#lastName").value;
+  const picture = document.querySelector("#picture").value;
   const age = document.querySelector("#age").value;
-  const form = new Validation(email, password, firstName);
+  const form = new Validation(
+    email,
+    password,
+    passwordConfirmed,
+    firstName,
+    lastName,
+    picture,
+    age
+  );
   form.isEmail(email);
   form.isPassword(password);
   form.isPasswordConfirmed(passwordConfirmed, password);
   form.isFirstName(firstName);
   form.isLastName(lastName);
+  form.isPicture(picture);
   form.isAge(age);
 }
