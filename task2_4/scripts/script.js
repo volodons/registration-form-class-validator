@@ -1,7 +1,7 @@
 "use strict";
 
-const submitButton = document.querySelector("#submit");
-submitButton.addEventListener("click", submit);
+const submit = document.querySelector("#form");
+submit.addEventListener("submit", submitForm);
 class Validation {
   constructor(
     firstName,
@@ -105,7 +105,7 @@ class Validation {
   }
 }
 
-function submit() {
+function submitForm() {
   const firstName = document.querySelector("#firstName").value;
   const lastName = document.querySelector("#lastName").value;
   const email = document.querySelector("#email").value;
