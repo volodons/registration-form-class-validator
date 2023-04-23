@@ -6,14 +6,14 @@ const submit = document.querySelector("#form");
 submit.addEventListener("submit", submitForm);
 
 function submitForm() {
-  const firstName = document.querySelector("#firstName").value;
-  const lastName = document.querySelector("#lastName").value;
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
-  const passwordConfirmed = document.querySelector("#passwordConfirmed").value;
-  const picture = document.querySelector("#picture").value;
-  const age = document.querySelector("#age").value;
-  const bio = document.querySelector("#bio").value;
+  const firstName = document.querySelector("#firstName");
+  const lastName = document.querySelector("#lastName");
+  const email = document.querySelector("#email");
+  const password = document.querySelector("#password");
+  const passwordConfirmed = document.querySelector("#passwordConfirmed");
+  const picture = document.querySelector("#picture");
+  const age = document.querySelector("#age");
+  const bio = document.querySelector("#bio");
   const form = new Validation(
     firstName,
     lastName,

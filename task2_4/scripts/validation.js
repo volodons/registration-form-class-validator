@@ -21,10 +21,10 @@ export class Validation {
 
   isFirstName(firstName) {
     const firstNameRegex = /^[A-Za-z\s]+$/;
-    if (firstNameRegex.test(firstName)) {
-      alert("First name is confirmed. Processing...");
+    if (firstNameRegex.test(firstName.value)) {
+      firstName.setCustomValidity("");
     } else {
-      alert(
+      firstName.setCustomValidity(
         "Your first name should have only A-Z and a-z letters, spaces can also be used"
       );
     }
@@ -32,10 +32,10 @@ export class Validation {
 
   isLastName(lastName) {
     const lastNameRegex = /^[A-Za-z\s]+$/;
-    if (lastNameRegex.test(lastName)) {
-      alert("Last name is confirmed. Processing...");
+    if (lastNameRegex.test(lastName.value)) {
+      lastName.setCustomValidity("");
     } else {
-      alert(
+      lastName.setCustomValidity(
         "Your last name should have only A-Z and a-z letters, spaces can also be used"
       );
     }
@@ -43,58 +43,62 @@ export class Validation {
 
   isEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (emailRegex.test(email)) {
-      alert("E-Mail is confirmed. Processing...");
+    if (emailRegex.test(email.value)) {
+      email.setCustomValidity("");
     } else {
-      alert("Your e-mail input is not an e-mail!");
+      email.setCustomValidity("Your e-mail input is not an e-mail!");
     }
   }
 
   isPassword(password) {
     const passwordRegex =
       /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    if (passwordRegex.test(password)) {
-      alert("Password is acquired. Moving onto confirmation...");
+    if (passwordRegex.test(password.value)) {
+      password.setCustomValidity("");
     } else {
-      alert(
+      password.setCustomValidity(
         "Your password should have at least 8 upper and lower case letters, at least 1 symbol, at least 1 number"
       );
     }
   }
 
   isPasswordConfirmed(passwordConfirmed, password) {
-    if (passwordConfirmed === password) {
-      alert("Password confirmation is successful. Processing...");
+    if (passwordConfirmed.value === password.value) {
+      passwordConfirmed.setCustomValidity("");
     } else {
-      alert("Your two passwords don't match!");
+      passwordConfirmed.setCustomValidity("Your two passwords don't match!");
     }
   }
 
   isPicture(picture) {
-    if (picture) {
-      alert("Picture is confirmed. Processing...");
+    if (picture.value) {
+      picture.setCustomValidity("");
     } else {
-      alert(
+      picture.setCustomValidity(
         "You did not upload your profile picture, please, consider uploading one"
       );
     }
   }
 
   isAge(age) {
-    if (age < 18 && age >= 0) {
-      alert("You need to get your parent consent to create an account");
-    } else if (age >= 18 && age <= 100) {
-      alert("Age is confirmed. Processing...");
+    if (age.value < 18 && age.value >= 0) {
+      age.setCustomValidity(
+        "You need to get your parent consent to create an account"
+      );
+    } else if (age.value >= 18 && age.value <= 100) {
+      age.setCustomValidity("");
     } else {
-      alert("Frankly speaking, this age doesn't look too realistic...");
+      age.setCustomValidity(
+        "Frankly speaking, this age doesn't look too realistic..."
+      );
     }
   }
 
   isBio(bio) {
-    if (bio) {
-      alert("Your bio is confirmed. Processing...");
+    if (bio.value) {
+      bio.setCustomValidity("");
     } else {
-      alert(
+      bio.setCustomValidity(
         "You did not tell us anything about yourself. Please, consider filling up the Bio form"
       );
     }
