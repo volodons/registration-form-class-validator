@@ -36,7 +36,7 @@ const myValidator = new Validator([
   },
   {
     input: ageInput,
-    rules: [Validator.isAge],
+    rules: [Validator.isRequired, Validator.isAge],
     errorMessage: "Age is not valid",
   },
   {
